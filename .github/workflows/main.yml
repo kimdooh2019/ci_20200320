@@ -30,7 +30,8 @@ jobs:
         python-version: ${{ matrix.python-version}}      
     - name: Install poetry 
       run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-
+    - name: Poetry export requirements
+      run: ~/.poetry/bin/poetry export -f requirements.txt > requirements.txt
   
     - name: Install Python packages
       run: ~/.poetry/bin/poetry install
@@ -44,3 +45,8 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: pytest-cov
+      run: ~/.poetry/bin/poetry run pytest --cov app
+    - name: codecov
+      run: ~/.poetry/bin/poetry run codecov
+      
