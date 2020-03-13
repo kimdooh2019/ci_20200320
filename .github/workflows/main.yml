@@ -22,15 +22,14 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       
-    - name: install poetry 
+    - name: Install poetry 
       run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 
     - name: Poetry export requirements
-      run: |
-        ~/.poetry/bin/poetry export -f requirements.txt > requirements.txt
-        cat requirements.txt
+      run: ~/.poetry/bin/poetry export -f requirements.txt > requirements.txt
 
-
+    - name: Cat requirements
+      run: cat requirements.txt
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: echo Hello, world!
