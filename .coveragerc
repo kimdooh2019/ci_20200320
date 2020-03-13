@@ -7,6 +7,6 @@ omit =
     app/config/asgi.py
     app/config/wsgi.py
 
-[repoprt]
+[report]
 exclude_lines =
     def __str__
