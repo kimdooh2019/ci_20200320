@@ -28,8 +28,7 @@ jobs:
     - name: Poetry export requirements
       run: ~/.poetry/bin/poetry export -f requirements.txt > requirements.txt
 
-    - name: Cat requirements
-      run: cat requirements.txt
+
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: echo Hello, world!
