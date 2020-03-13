@@ -47,6 +47,7 @@ jobs:
         echo test, and deploy your project.
     - name: pytest-cov
       run: ~/.poetry/bin/poetry run pytest --cov app
+      
     - name: codecov
       run: ~/.poetry/bin/poetry run codecov
       
