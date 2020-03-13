@@ -24,10 +24,16 @@ jobs:
     - name: install poetry 
       run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 
+    - name: Poetry export requirements
+      run:
+        ~/.poetry/bin/poetry export -f requirements.txt > requirements.txt
+        cat requirements.txt
+
+
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: echo Hello, world!
-
+  
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
